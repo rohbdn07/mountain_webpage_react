@@ -1,13 +1,12 @@
 import './App.css';
+import AppRoutes from './routes';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Hello World</h2>
-      </header>
+      <AppRoutes />
     </div>
   );
-}
+};
 
 export default App;
