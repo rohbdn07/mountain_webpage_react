@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
+// import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Box, CardActionArea } from '@mui/material';
 
 const LargeCard = () => {
   return (
-    <Card sx={{ maxWidth: 450, boxShadow: '0px 0px 2px 0px rgba(0,0,0,0.75)' }}>
+    <Box sx={{ maxWidth: 400, cursor: 'none' }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -16,7 +16,7 @@ const LargeCard = () => {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" align="left">
+          <Typography variant="h5" component="div" align="left">
             Apartments
           </Typography>
           <Typography variant="body2" color="text.secondary" align="left">
@@ -26,7 +26,7 @@ const LargeCard = () => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </Box>
   );
 };
 

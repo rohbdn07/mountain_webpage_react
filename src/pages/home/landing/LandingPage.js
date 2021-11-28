@@ -1,11 +1,15 @@
 import { Box, Container } from '@mui/material';
 import React from 'react';
+import Address from '../../../components/address/card/Address';
+import GoogleMap from '../../../components/address/card/GoogleMap';
 import LargeCard from '../../../components/card/largecard/LargeCard';
 import SmallCard from '../../../components/card/smallcard/SmallCard';
 import Header from '../../../components/common/header/Header';
+import BasicTextFields from '../../../components/form/card/Form';
 import HeaderLayout from '../../../components/header/layout';
 import HeroBannerLayout from '../../../components/hero/layout';
 import NavbarLayout from '../../../components/navbar/layout';
+import ResortVideo from '../../../components/videos/video/ResortVideo';
 import './styles.css';
 
 /**
@@ -21,11 +25,12 @@ const LandingPage = () => {
         <Box
           sx={{
             display: 'flex',
-            justifyContent: 'center',
-            gridGap: '2rem',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            // gridGap: '2rem',
             alignItems: 'center',
             width: '100%',
-            height: 350,
+            height: 'auto',
             marginTop: '2rem',
             marginBottom: '2rem',
             padding: '0.5rem'
@@ -46,11 +51,13 @@ const LandingPage = () => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
+            flexWrap: 'wrap',
             gridGap: '2rem',
             alignItems: 'center',
             width: '100%',
             marginTop: '1rem',
             marginBottom: '2rem'
+            // border: '1px solid #e0e0e0'
           }}>
           <SmallCard />
           <SmallCard />
@@ -59,6 +66,46 @@ const LandingPage = () => {
       </>
     );
   };
+
+  const Videos = () => {
+    return (
+      <>
+        <Header title={'Our Resort'} />
+        <ResortVideo />
+      </>
+    );
+  };
+
+  const FooterSection = () => {
+    return (
+      <>
+        <Box
+          sx={{
+            // display: 'grid',
+            // gridTemplateColumns: 'repeat(3, 1fr)',
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignItems: 'flex-start',
+            // columnGap: '2rem',
+            flexWrap: 'wrap',
+            // width: '100%',
+            maxHeight: '350px',
+            height: '300px',
+            position: 'relative',
+            marginTop: '2rem',
+            marginBottom: '2rem',
+            // border: '1px solid red',
+            padding: '0.5rem'
+          }}>
+          <BasicTextFields />
+          <Address />
+          <GoogleMap />
+        </Box>
+      </>
+    );
+  };
+
+  // const Form = () => <BasicTextFields />;
   return (
     <React.Fragment>
       <Container maxWidth="md">
@@ -74,6 +121,8 @@ const LandingPage = () => {
           </div>
           <ServiceCardList />
           <PassionCardList />
+          <Videos />
+          <FooterSection />
         </div>
       </Container>
     </React.Fragment>
