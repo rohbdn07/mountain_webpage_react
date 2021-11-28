@@ -4,11 +4,17 @@ import React from 'react';
 const Quote = () => {
   return (
     <React.Fragment>
-      <Box>
-        <Typography variant="h6" color="black">
+      <Box sx={{ margin: '3rem' }}>
+        <Typography
+          variant="h5"
+          color="black"
+          style={{ fontFamily: ['Dancing Script', 'cursive'].join(',') }}>
           A pair of skis are the ultimate transportation to freedom.
         </Typography>
-        <Typography variant="h7" color="black">
+        <Typography
+          variant="h7"
+          color="black"
+          style={{ fontFamily: ['Dancing Script', 'cursive'].join(',') }}>
           - Warren Miller
         </Typography>
       </Box>

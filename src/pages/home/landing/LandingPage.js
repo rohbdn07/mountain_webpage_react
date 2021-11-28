@@ -56,7 +56,7 @@ const LandingPage = () => {
             alignItems: 'center',
             width: '100%',
             marginTop: '1rem',
-            marginBottom: '2rem'
+            marginBottom: '3rem'
             // border: '1px solid #e0e0e0'
           }}>
           <SmallCard />
@@ -94,6 +94,7 @@ const LandingPage = () => {
             position: 'relative',
             marginTop: '2rem',
             marginBottom: '2rem',
+            backgroundColor: '#f5f5f5',
             // border: '1px solid red',
             padding: '0.5rem'
           }}>

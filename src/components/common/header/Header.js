@@ -10,7 +10,11 @@ const Header = ({ title }) => {
           variant="p"
           component="h4"
           align="left"
-          sx={{ fontWeight: '1rem', padding: '0.5rem' }}>
+          sx={{
+            fontWeight: '1rem',
+            padding: '0.5rem',
+            fontFamily: ['Sora', 'sans-serif'].join(',')
+          }}>
           {title}
         </Typography>
       </Box>

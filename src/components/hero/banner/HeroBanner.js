@@ -15,18 +15,18 @@ const images = [
     imgPath:
       'https://blog-cdn.checkyeti.com/wp-content/uploads/2019/01/freeride-austria-5-best-ski-resorts.jpg'
   },
-  {
-    imgPath:
-      'https://www.ispo.com/sites/default/files/styles/amp_metadata_content_image_min_696px_wide/public/2020-10/Skicircus%20%28c%29%20Bause.jpg?itok=eCZKxR9z'
-  },
+  // {
+  //   imgPath:
+  //     'https://www.ispo.com/sites/default/files/styles/amp_metadata_content_image_min_696px_wide/public/2020-10/Skicircus%20%28c%29%20Bause.jpg?itok=eCZKxR9z'
+  // },
   {
     imgPath:
       'https://www.skisilverstar.com/site/assets/files/4360/blake-jorgenson-2378.1350x900p66x66.jpg'
-  },
-  {
-    imgPath:
-      'https://www.momondo.com/discover/wp-content/uploads/sites/260/2016/10/e4c1b624-45c2-34a8-85ba-4972dbfd3adf.jpg'
   }
+  // {
+  //   imgPath:
+  //     'https://www.momondo.com/discover/wp-content/uploads/sites/260/2016/10/e4c1b624-45c2-34a8-85ba-4972dbfd3adf.jpg'
+  // }
 ];
 
 const HeroBannerSwipeable = () => {
