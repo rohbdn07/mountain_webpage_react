@@ -1,11 +1,17 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 // import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, CardActionArea } from '@mui/material';
+import { useFetchAllPost } from '../../../hooks/post/useGetPost';
 
 const LargeCard = () => {
+  const { isLoading, posts, error } = useFetchAllPost();
+  console.log(isLoading);
+  console.log(error);
+  console.log(posts);
   return (
     <Box sx={{ maxWidth: 400, cursor: 'none' }}>
       <CardActionArea>
@@ -28,6 +34,12 @@ const LargeCard = () => {
       </CardActionArea>
     </Box>
   );
+};
+
+useFetchAllPost.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  error: PropTypes.string
 };
 
 export default LargeCard;
