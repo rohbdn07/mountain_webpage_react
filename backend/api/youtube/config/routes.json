@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/youtube",
+      "handler": "youtube.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/youtube",
+      "handler": "youtube.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/youtube",
+      "handler": "youtube.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

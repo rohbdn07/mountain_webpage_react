@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/herobanners",
+      "handler": "herobanner.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/herobanners/count",
+      "handler": "herobanner.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/herobanners/:id",
+      "handler": "herobanner.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/herobanners",
+      "handler": "herobanner.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/herobanners/:id",
+      "handler": "herobanner.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/herobanners/:id",
+      "handler": "herobanner.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
