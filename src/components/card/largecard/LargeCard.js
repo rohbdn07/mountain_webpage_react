@@ -9,30 +9,45 @@ import { useFetchAllPost } from '../../../hooks/post/useGetPost';
 
 const LargeCard = () => {
   const { isLoading, posts, error } = useFetchAllPost();
-  console.log(isLoading);
-  console.log(error);
-  console.log(posts);
+
+  const url = 'http://localhost:1337';
+
   return (
-    <Box sx={{ maxWidth: 400, cursor: 'none' }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="220"
-          image="https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i4328ae53a316c822/version/1510667937/luxurious-ski-resorts-courchevel-copyright-nikolpetr-european-best-destinations.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography variant="h5" component="div" align="left">
-            Apartments
-          </Typography>
-          <Typography variant="body2" color="text.secondary" align="left">
-            Whether you’re getting yourself ramped-up for your next ski and snowboard holiday or
-            you’re just trying to escape the doldrums of your work day with a bit of ski-escapism,
-            we make are sure to get you in the mood for snow!
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Box>
+    <>
+      {isLoading && <p>Loading...</p>}
+      {!isLoading && error ? (
+        <p>Error in Fetching data...</p>
+      ) : (
+        posts &&
+        posts.map((post) => {
+          return (
+            <Box key={post.id} sx={{ maxWidth: 400, cursor: 'none' }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt={post.title}
+                  height="220"
+                  image={url + post.cover[0].formats.thumbnail.url}
+                  title={post.title}
+                />
+                <CardContent sx={{ padding: '0px', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {post.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                    style={{ textAlign: 'start' }}>
+                    {post.content}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Box>
+          );
+        })
+      )}
+    </>
   );
 };
 
