@@ -23,6 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "client": "react-scripts start",
+    "strapi": "cd backend && yarn develop",
+    "dev": "concurrently \"yarn run strapi\" \"yarn run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
