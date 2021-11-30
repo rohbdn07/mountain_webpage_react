@@ -12,14 +12,11 @@ export const PassionCardList = () => {
           justifyContent: 'center',
           flexWrap: 'wrap',
           gridGap: '2rem',
-          alignItems: 'center',
+          alignItems: 'start',
           width: '100%',
           marginTop: '1rem',
           marginBottom: '3rem'
-          // border: '1px solid #e0e0e0'
         }}>
-        <SmallCard />
-        <SmallCard />
         <SmallCard />
       </Box>
     </>

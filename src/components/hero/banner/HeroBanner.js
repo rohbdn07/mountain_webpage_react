@@ -7,32 +7,21 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import { useFetchImages } from '../../../hooks/carousel/useFetchImages';
+import { getImagesUrlFromStripe } from '../../../utils/getImages';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    imgPath:
-      'https://blog-cdn.checkyeti.com/wp-content/uploads/2019/01/freeride-austria-5-best-ski-resorts.jpg'
-  },
-  // {
-  //   imgPath:
-  //     'https://www.ispo.com/sites/default/files/styles/amp_metadata_content_image_min_696px_wide/public/2020-10/Skicircus%20%28c%29%20Bause.jpg?itok=eCZKxR9z'
-  // },
-  {
-    imgPath:
-      'https://www.skisilverstar.com/site/assets/files/4360/blake-jorgenson-2378.1350x900p66x66.jpg'
-  }
-  // {
-  //   imgPath:
-  //     'https://www.momondo.com/discover/wp-content/uploads/sites/260/2016/10/e4c1b624-45c2-34a8-85ba-4972dbfd3adf.jpg'
-  // }
-];
-
 const HeroBannerSwipeable = () => {
+  // useFetchImages() returns an object with original and thumbnail images
+  const { original: carouselImages } = useFetchImages();
+
+  const imageUrlPath = getImagesUrlFromStripe(carouselImages);
+
   const theme = useTheme();
+
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const maxSteps = carouselImages.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -53,7 +42,7 @@ const HeroBannerSwipeable = () => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents>
-        {images.map((step, index) => (
+        {carouselImages.map((step, index) => (
           <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
@@ -63,9 +52,11 @@ const HeroBannerSwipeable = () => {
                   display: 'block',
                   Width: 400,
                   overflow: 'hidden',
-                  width: '100%'
+                  width: '100%',
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover'
                 }}
-                src={step.imgPath}
+                src={imageUrlPath.length > 0 && imageUrlPath[index].imgPath}
                 alt={step.label}
               />
             ) : null}

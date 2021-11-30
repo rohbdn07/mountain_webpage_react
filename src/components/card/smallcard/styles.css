@@ -3,10 +3,11 @@
   position: relative;
   max-height: 200px;
   max-width: 257px;
+  overflow: hidden;
 }
 .img__wrap img {
   width: 100%;
-  height: auto;
+  min-height: 12rem;
   /* max-height: 200px;
   max-width: 257px; */
 }
@@ -42,6 +43,7 @@
 
 @media screen and (max-width: 768px) {
   .img__wrap {
+    max-width: 100%;
     width: 100%;
   }
 }

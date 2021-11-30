@@ -12,14 +12,13 @@ export const ServiceCardList = () => {
           justifyContent: 'space-between',
           flexWrap: 'wrap',
           // gridGap: '2rem',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           width: '100%',
           height: 'auto',
-          marginTop: '2rem',
+          marginTop: '1rem',
           marginBottom: '2rem',
           padding: '0.5rem'
         }}>
-        <LargeCard />
         <LargeCard />
       </Box>
     </>

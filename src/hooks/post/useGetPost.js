@@ -7,7 +7,7 @@ import PostService from '../../services/posts/PostService';
  */
 export const useFetchAllPost = () => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const [posts, setPosts] = React.useState(null);
+  const [posts, setPosts] = React.useState([]);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
@@ -20,7 +20,7 @@ export const useFetchAllPost = () => {
       const { data } = await PostService.getAll();
       setPosts(data);
 
-      setIsLoading(true);
+      setIsLoading(false);
     } catch (error) {
       setError(error);
       setIsLoading(false);

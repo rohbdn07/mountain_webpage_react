@@ -5,7 +5,7 @@ const Address = () => {
     <Box
       sx={{
         width: '100%',
-        height: 20,
+        // height: 10,
         fontSize: 10,
         opacity: [0.9, 0.8, 0.7]
       }}>
