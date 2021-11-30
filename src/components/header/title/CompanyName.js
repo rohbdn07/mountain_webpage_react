@@ -14,10 +14,7 @@ const Title = ({ companyName, description }) => {
 const CompanyName = () => {
   return (
     <React.Fragment>
-      <Title
-        companyName={'Mountain Ski Resort'}
-        description={'A simple web application for the mountain climbing community'}
-      />
+      <Title companyName={'Mountain Ski Resort'} description={'The mountain climbing community'} />
     </React.Fragment>
   );
 };

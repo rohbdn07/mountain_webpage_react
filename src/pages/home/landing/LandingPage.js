@@ -1,27 +1,26 @@
 import React from 'react';
-import HeaderLayout from '../../../components/header/layout';
+import HeroBannerLayout from '../../../components/hero/layout';
+import { FooterSection } from './components/FooterSection';
+import { PassionCardList } from './components/PassionCardList';
+import { ServiceCardList } from './components/ServiceCardList';
+import { Video } from './components/Video';
+import { Layout } from './layout';
+import './styles.css';
 
+/**
+ *
+ * @returns {JSX} LandingPage
+ */
 const LandingPage = () => {
   return (
     <React.Fragment>
-      <div className="landing_page">
-        <div className="landing_page_header">
-          <HeaderLayout />
-        </div>
-        <div className="landing_page_body">
-          <div className="landing_page_body_content">
-            <div className="landing_page_body_content_title">
-              <h1>Mountain Ski Resort</h1>
-              <p>A simple web application for the mountain climbing community</p>
-            </div>
-            <div className="landing_page_body_content_links">
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Layout>
+        <HeroBannerLayout />
+        <ServiceCardList />
+        <PassionCardList />
+        <Video />
+        <FooterSection />
+      </Layout>
     </React.Fragment>
   );
 };

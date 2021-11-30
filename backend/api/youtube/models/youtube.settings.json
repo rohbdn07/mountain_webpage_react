@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "youtubes",
+  "info": {
+    "name": "youtube"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "video": {
+      "type": "string"
+    }
+  }
+}
