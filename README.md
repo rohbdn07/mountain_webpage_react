@@ -1,12 +1,16 @@
-# Getting Started with Create React App
+# Ski-resort webpage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is a webpage created with React on frontend and contents in it is handled by Strapi HEADLESS-CMS (works as a backend server).
 
 ## Available Scripts
 
+Before running any commands mentioned as below, first of all, Go to the root folder of this project then, install yarn packages by: `yarn install`
+
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn run dev`
+
+This will run both services ( Frontend and Stripe) at a single command as mentioned above.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
