@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
+    "concurrently": "^6.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "6",
@@ -22,6 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "client": "react-scripts start",
+    "strapi": "cd backend && yarn develop",
+    "dev": "concurrently \"yarn run strapi\" \"yarn run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
