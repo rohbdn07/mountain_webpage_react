@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_addresses",
+  "info": {
+    "name": "our address",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postal": {
+      "type": "string"
+    }
+  }
+}
