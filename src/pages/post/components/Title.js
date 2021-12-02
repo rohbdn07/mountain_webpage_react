@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import PostTitle from '../../../components/post/title/PostTitle';
 
@@ -11,10 +11,8 @@ const Title = () => {
           container
           xs={12}
           md={11}
-          sx={{ padding: matches ? '0 15px' : '1rem', marginTop: matches ? '1rem' : '1.5rem' }}>
-          <Typography variant="h1">
-            <PostTitle />
-          </Typography>
+          sx={{ padding: matches ? '0' : '0rem', marginTop: matches ? '1rem' : '1rem' }}>
+          <PostTitle />
         </Grid>
       </Box>
     </>

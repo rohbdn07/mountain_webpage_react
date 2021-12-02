@@ -1,4 +1,5 @@
 import React from 'react';
+import Author from './components/Author';
 import Content from './components/Content';
 import PostBanner from './components/PostBanner';
 import Title from './components/Title';
@@ -14,6 +15,7 @@ const PostPage = () => {
       <Layout>
         <PostBanner />
         <Title />
+        <Author />
         <Content />
       </Layout>
     </React.Fragment>
