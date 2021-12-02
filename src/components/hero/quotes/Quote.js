@@ -4,7 +4,7 @@ import React from 'react';
 const Quote = () => {
   return (
     <React.Fragment>
-      <Box sx={{ margin: '3rem' }}>
+      <Box sx={{ margin: '3rem', textAlign: 'center' }}>
         <Typography
           variant="h5"
           color="black"

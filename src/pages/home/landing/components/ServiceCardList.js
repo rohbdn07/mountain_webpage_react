@@ -2,6 +2,10 @@ import { Box } from '@mui/material';
 import LargeCard from '../../../../components/card/largecard/LargeCard';
 import Header from '../../../../components/common/header/Header';
 
+/**
+ *
+ * @returns {React.Component}  ServiceCardList
+ */
 export const ServiceCardList = () => {
   return (
     <>

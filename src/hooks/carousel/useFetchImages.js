@@ -9,7 +9,6 @@ export const useFetchImages = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [thumbnail, setThumbnail] = React.useState([]);
   const [original, setOriginal] = React.useState([]);
-
   const [error, setError] = React.useState('');
 
   React.useEffect(() => {

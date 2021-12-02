@@ -1,0 +1,37 @@
+.footer_end {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /* background-color: brown; */
+}
+
+.fotend_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fotend_left p {
+  margin-left: 1rem;
+  font-size: 0.7rem;
+  color: rgb(138, 134, 134);
+}
+.fotend_middle {
+  display: flex;
+  align-items: center;
+}
+.fotend_middle p {
+  font-size: 0.7rem;
+  margin-right: 1.5rem;
+  color: rgb(138, 134, 134);
+}
+
+@media screen and (max-width: 768px) {
+  .fotend_middle {
+    flex-direction: flex;
+  }
+  .fotend_left p,
+  .fotend_middle p {
+    font-size: 0.5rem;
+    color: rgb(138, 134, 134);
+  }
+}

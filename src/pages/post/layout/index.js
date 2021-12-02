@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container } from '@mui/material';
-import HeaderLayout from '../../../../components/header/layout';
-import NavbarLayout from '../../../../components/navbar/layout';
-import FooterEnd from '../../../../components/footer/FooterEnd';
+import PropTypes from 'prop-types';
+import FooterEnd from '../../../components/footer/FooterEnd';
+import HeaderLayout from '../../../components/header/layout';
 
 export const Layout = ({ children }) => {
   return (
@@ -12,9 +11,6 @@ export const Layout = ({ children }) => {
         <div className="landing_page">
           <div className="landing_page_header">
             <HeaderLayout />
-          </div>
-          <div>
-            <NavbarLayout />
           </div>
           <main>{children}</main>
           <FooterEnd />

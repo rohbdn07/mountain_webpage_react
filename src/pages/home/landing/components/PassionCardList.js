@@ -2,6 +2,10 @@ import { Box } from '@mui/material';
 import SmallCard from '../../../../components/card/smallcard/SmallCard';
 import Header from '../../../../components/common/header/Header';
 
+/**
+ *
+ * @returns {React.Component}  A passion card list component.
+ */
 export const PassionCardList = () => {
   return (
     <>
