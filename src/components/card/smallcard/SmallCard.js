@@ -9,11 +9,11 @@ const SmallCard = () => {
 
   const imageUrlPath = getImagesUrlFromStripe(thumbnail);
 
-  return thumbnail.map((post, index) => {
+  return thumbnail?.map((post, index) => {
     return (
-      <div className="img__wrap" key={post[index]}>
+      <div className="img__wrap" key={index}>
         <img className="img__img" src={imageUrlPath.length > 0 && imageUrlPath[index].imgPath} />
-        <Link to={`/post/${post[index]}`}>
+        <Link to={`/services/${index}`}>
           <p className="img__button">Readmore</p>
         </Link>
       </div>

@@ -9,7 +9,7 @@ import Address from '../location/Address';
 const HeaderLayout = () => {
   return (
     <React.Fragment>
-      <Container maxWidth="xl">
+      <Container maxWidth="md" style={{ paddingLeft: '0', paddingRight: '0' }}>
         <div className="headerlayout_container">
           <div className="headerlayout_banner">
             <div className="banner_left">

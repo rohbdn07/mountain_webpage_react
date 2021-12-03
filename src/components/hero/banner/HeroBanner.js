@@ -20,7 +20,8 @@ const HeroBannerSwipeable = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const imageUrlPath = getImagesUrlFromStripe(carouselImages);
 
-  const maxSteps = carouselImages.length;
+  console.log('carouselImages', carouselImages);
+  const maxSteps = carouselImages?.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
