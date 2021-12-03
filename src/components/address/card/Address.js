@@ -16,6 +16,8 @@ const Address = () => {
               Helsinki, Finland
               <br />
               053471
+              <br />
+              info@test.com
             </span>
           </p>
           <div className="address_details_body">

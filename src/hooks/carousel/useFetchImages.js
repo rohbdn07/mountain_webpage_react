@@ -9,7 +9,6 @@ export const useFetchImages = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [thumbnail, setThumbnail] = React.useState([]);
   const [original, setOriginal] = React.useState([]);
-
   const [error, setError] = React.useState('');
 
   React.useEffect(() => {
@@ -21,6 +20,7 @@ export const useFetchImages = () => {
     try {
       const { data } = await CarouselService.getAll();
       const getImages = await getImagesFromStrapi(data);
+      console.log(getImages);
 
       setOriginal(getImages.carouselImages);
       setThumbnail(getImages.thumbnails);
@@ -42,13 +42,15 @@ export const useFetchImages = () => {
  */
 const getImagesFromStrapi = async (data) => {
   const images = data?.map((item) => ({
-    thumbnail: item.image.map((item) => item.formats.thumbnail.url),
-    original: item.image.map((image) => image.url),
+    thumbnail: item.coverImage.map((item) => item.formats.thumbnail.url),
+    original: item.coverImage.map((image) => image.url),
     alt: 'images'
   }));
-
-  const carouselImages = images[0].original;
-  const thumbnails = images[0].thumbnail;
+  console.log('the images', images);
+  const carouselImages = images.map((item) => item.original);
+  console.log('the carousel images', carouselImages);
+  // const thumbnails = images.thumbnail;
+  const thumbnails = images.map((item) => item.thumbnail);
 
   return { carouselImages, thumbnails };
 };
