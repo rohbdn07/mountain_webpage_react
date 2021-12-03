@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useQuery } from 'react-query';
 import FetchServicePost from '../../services/posts/FetchServicePost';
 
@@ -9,19 +9,12 @@ import FetchServicePost from '../../services/posts/FetchServicePost';
  * For more info: Visit:https://react-query.tanstack.com/guides/query-functions.
  */
 export const useFetchAllServicePost = () => {
-  React.useEffect(() => {
-    getServicePost();
-  }, []);
+  const queryinfo = useQuery(['allServicesData'], async () => await FetchServicePost.getAll());
 
-  const getServicePost = () => {
-    const allServicesData = useQuery(
-      ['allServicesData'],
-      async () => await FetchServicePost.getAll()
-    );
+  //   console.log('allServicesData', queryinfo);
 
-    return {
-      ...allServicesData
-    };
+  return {
+    ...queryinfo
   };
 };
 
@@ -33,18 +26,12 @@ export const useFetchAllServicePost = () => {
  * For more info: Visit:https://react-query.tanstack.com/guides/query-functions.
  */
 export const useFetchSinglePost = (postId) => {
-  React.useEffect(() => {
-    getSingleServicePost();
-  }, []);
-
-  const getSingleServicePost = () => {
-    const singleServicePost = useQuery(
-      ['singleServicesData'],
-      async () => await FetchServicePost.getSingle(postId)
-    );
-
-    return {
-      ...singleServicePost
-    };
+  const singleServicePost = useQuery(
+    ['singleServicesData'],
+    async () => await FetchServicePost.getSingle(postId)
+  );
+  //   console.log('singleServicePost', singleServicePost);
+  return {
+    ...singleServicePost
   };
 };

@@ -7,7 +7,7 @@ import HeaderLayout from '../../../components/header/layout';
 export const Layout = ({ children }) => {
   return (
     <React.Fragment>
-      <Container maxWidth="md">
+      <Container maxWidth="md" style={{ backgroundColor: '#fff' }}>
         <div className="landing_page">
           <HeaderLayout />
           <main>{children}</main>

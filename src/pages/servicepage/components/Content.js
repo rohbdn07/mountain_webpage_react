@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import { Box, Grid, useMediaQuery } from '@mui/material';
 import React from 'react';
 import PostContent from '../../../components/post/content/PostContent';
 
-const Content = () => {
+const Content = ({ content }) => {
   const matches = useMediaQuery('(max-width:600px)');
   return (
     <>
@@ -17,11 +18,15 @@ const Content = () => {
             textAlign: 'justify',
             lineHeight: matches ? '1.5' : '1.5'
           }}>
-          <PostContent />
+          <PostContent content={content} />
         </Grid>
       </Box>
     </>
   );
+};
+
+Content.propTypes = {
+  content: PropTypes.string
 };
 
 export default Content;

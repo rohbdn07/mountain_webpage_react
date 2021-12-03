@@ -9,7 +9,7 @@ const getAll = () => {
 };
 
 /**
- *@param {number} id - Service's post id.
+ *@param {number} id - Service's post.
  * @returns {Promise} - Promise that returns single service's post data
  * that matches with params id.
  */

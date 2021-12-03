@@ -1,8 +1,10 @@
 import { Box } from '@mui/material';
+import PropTypes from 'prop-types';
+
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const PostTitle = () => {
+const PostTitle = ({ title }) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -15,10 +17,14 @@ const PostTitle = () => {
           padding: '0.5rem',
           letterSpacing: '0.1rem'
         }}>
-        <h1>Enjoy ski from the Mountain Ski Resort</h1>
+        <h1>{title}</h1>
       </Box>
     </>
   );
+};
+
+PostTitle.propTypes = {
+  title: PropTypes.string
 };
 
 export default PostTitle;

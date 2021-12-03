@@ -20,7 +20,7 @@ export const useFetchImages = () => {
     try {
       const { data } = await CarouselService.getAll();
       const getImages = await getImagesFromStrapi(data);
-      console.log(getImages);
+      // console.log(getImages);
 
       setOriginal(getImages.carouselImages);
       setThumbnail(getImages.thumbnails);
@@ -46,9 +46,9 @@ const getImagesFromStrapi = async (data) => {
     original: item.coverImage.map((image) => image.url),
     alt: 'images'
   }));
-  console.log('the images', images);
+  // console.log('the images', images);
   const carouselImages = images.map((item) => item.original);
-  console.log('the carousel images', carouselImages);
+  // console.log('the carousel images', carouselImages);
   // const thumbnails = images.thumbnail;
   const thumbnails = images.map((item) => item.thumbnail);
 
