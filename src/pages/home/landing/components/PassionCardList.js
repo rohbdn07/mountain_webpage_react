@@ -13,9 +13,9 @@ export const PassionCardList = () => {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gridGap: '2rem',
+          gridGap: '1rem',
           alignItems: 'start',
           width: '100%',
           marginTop: '1rem',

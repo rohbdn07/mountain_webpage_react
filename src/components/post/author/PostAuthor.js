@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
 import { Avatar, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
-const PostAuthor = () => {
+const PostAuthor = ({ author, created }) => {
+  const getDateOfPost = new Date(created).toLocaleDateString();
   return (
     <>
       <Box
@@ -37,12 +39,16 @@ const PostAuthor = () => {
               paddingRight: '0.5rem'
             }
           }}>
-          <span>Rohit bhandari</span>
-          <span>2021-11-12</span>
+          <span>{author}</span>
+          <span>{getDateOfPost}</span>
         </Typography>
       </Box>
     </>
   );
 };
 
+PostAuthor.propTypes = {
+  author: PropTypes.string,
+  created: PropTypes.string
+};
 export default PostAuthor;

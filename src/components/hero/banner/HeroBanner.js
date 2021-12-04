@@ -5,12 +5,9 @@ import MobileStepper from '@mui/material/MobileStepper';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-// import SwipeableViews from 'react-swipeable-views';
-// import { autoPlay } from 'react-swipeable-views-utils';
 import { useFetchImages } from '../../../hooks/carousel/useFetchImages';
 import { getImagesUrlFromStripe } from '../../../utils/getImages';
 import { AutoPlaySwipeableViews } from './AutoPlaySwipeableViwes';
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const HeroBannerSwipeable = () => {
   // useFetchImages() returns an object with original and thumbnail images
@@ -20,7 +17,7 @@ const HeroBannerSwipeable = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const imageUrlPath = getImagesUrlFromStripe(carouselImages);
 
-  console.log('carouselImages', carouselImages);
+  // console.log('carouselImages', carouselImages);
   const maxSteps = carouselImages?.length;
 
   const handleNext = () => {
