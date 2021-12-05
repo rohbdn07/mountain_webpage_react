@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroBannerLayout from '../../../components/hero/layout';
 import { FooterSection } from './components/FooterSection';
+import NewsLetterForm from './components/NewsLetterForm';
 import { PassionCardList } from './components/PassionCardList';
 import { ServiceCardList } from './components/ServiceCardList';
 import { Video } from './components/Video';
@@ -19,6 +20,7 @@ const LandingPage = () => {
         <ServiceCardList />
         <PassionCardList />
         <Video />
+        <NewsLetterForm />
         <FooterSection />
       </Layout>
     </React.Fragment>

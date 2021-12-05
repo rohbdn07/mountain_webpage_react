@@ -27,11 +27,10 @@ const SEO = ({ title, description, url }) => {
   );
 };
 
-export default SEO;
-
 SEO.propsTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
   url: PropTypes.string
 };
+
+export default SEO;

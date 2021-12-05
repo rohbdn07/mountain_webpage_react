@@ -1,4 +1,5 @@
 import http from '../http-common';
+import PropTypes from 'prop-types';
 
 /**
  *
@@ -15,6 +16,10 @@ const getAll = () => {
  */
 const get = (id) => {
   return http.get(`/posts/${id}`);
+};
+
+getAll.propTypes = {
+  id: PropTypes.number.isRequired
 };
 
 export default {
