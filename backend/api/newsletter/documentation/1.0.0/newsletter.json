@@ -516,14 +516,17 @@
     "schemas": {
       "Newsletter": {
         "required": [
-          "id"
+          "id",
+          "email"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
           "email": {
-            "type": "string"
+            "type": "string",
+            "default": "johndoe@example.com",
+            "minLength": 5
           },
           "published_at": {
             "type": "string",
@@ -532,9 +535,14 @@
         }
       },
       "NewNewsletter": {
+        "required": [
+          "email"
+        ],
         "properties": {
           "email": {
-            "type": "string"
+            "type": "string",
+            "default": "johndoe@example.com",
+            "minLength": 5
           },
           "published_at": {
             "type": "string",
