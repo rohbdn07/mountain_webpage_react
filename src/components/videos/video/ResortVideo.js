@@ -2,6 +2,11 @@ import React from 'react';
 import { useFetchYoutube } from '../../../hooks/youtube/useFetchYoutube';
 import './styles.css';
 
+/**
+ *@description Component that calls the custom hook useFetchYoutube 
+ to fetch the video from the API and render it.
+ * @returns {JSX.Element}  JSX element.
+ */
 const ResortVideo = () => {
   const { youtubeVideo } = useFetchYoutube();
   const playYoutubeVideo = youtubeVideo.video;

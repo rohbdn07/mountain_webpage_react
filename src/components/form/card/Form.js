@@ -1,9 +1,12 @@
 import * as React from 'react';
-import axios from 'axios';
-// import Header from '../../common/header/Header';
 import './styles.css';
 import Alert from '@mui/material/Alert';
+import messageToServiceProvider from '../../../services/common/PostService';
 
+/**
+ *
+ * @returns {React.Component}  Form component for the card form.
+ */
 const BasicTextFields = () => {
   const [userInput, setUserInput] = React.useState({
     name: '',
@@ -13,7 +16,6 @@ const BasicTextFields = () => {
 
   //form error handling
   const [formError, setFormError] = React.useState(null);
-
   const [success, setSuccess] = React.useState(false);
 
   /**
@@ -46,15 +48,16 @@ const BasicTextFields = () => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
+      //check if the form is valid
       if (userInput.name === '' || userInput.email === '' || userInput.message === '') {
         setFormError('Please fill all the fields');
         return;
       }
-
-      const response = await axios.post('http://localhost:1337/forms', userInput);
-      console.log(response);
+      // it send the user's input(data) to the backend service(strapi)
+      //in order to send contact request,and get the response(http) back.
+      const response = await messageToServiceProvider.post('/forms', userInput);
+      // console.log(response);
 
       checkFormSubmittedOrNot(response);
       resetUserInput();
@@ -65,6 +68,7 @@ const BasicTextFields = () => {
     }
   };
 
+  //check if the form is submitted or not and update the state accordingly.
   const checkFormSubmittedOrNot = (response) => {
     if (response.statusText === 'OK' && response.status === 200) {
       setSuccess(true);
