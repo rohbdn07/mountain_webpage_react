@@ -50,10 +50,24 @@ export default function SubscribeForm() {
       }
       console.log(email);
 
+      const isEmailAlreadyExists = await checkIfEmailIsExistedOrNot(email);
+      console.log(isEmailAlreadyExists);
+
+      if (isEmailAlreadyExists) {
+        setSuccess(false);
+        setFormError('Email already exists');
+        setTimeout(() => {
+          setFormError(null);
+        }, 4000);
+        console.log('Email already exists');
+        return;
+      }
+
       // send the user input(email) to the backend service(strapi)
       // in order to subscribe Newsletter and in return, get the response(http) back.
+      //Also, the User get an email notification.
       const response = await subcriptionService.post('/newsletters', { email });
-      console.log(response);
+      console.log('this is from post', response);
 
       await checkFormSubmittedOrNot(response);
       resetUserInput();
@@ -73,6 +87,17 @@ export default function SubscribeForm() {
         setFormError(null);
       }, 4000);
     }
+  };
+
+  //check if the email is already existed or not.
+  // if the email is already existed, return true.
+  const checkIfEmailIsExistedOrNot = async (email) => {
+    const response = await subcriptionService.get('/newsletters');
+    console.log('this is to check', response.data);
+    if (response && response.data.length > 0) {
+      return response.data.filter((element) => element.email === email).length > 0;
+    }
+    return false;
   };
 
   return (
