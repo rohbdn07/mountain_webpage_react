@@ -15,22 +15,22 @@
   font-size: 0.7rem;
   color: rgb(138, 134, 134);
 }
-.fotend_middle {
+.fotend_right {
   display: flex;
   align-items: center;
 }
-.fotend_middle p {
-  font-size: 0.7rem;
+.fotend_right p {
+  font-size: 0.5rem;
   margin-right: 1.5rem;
   color: rgb(138, 134, 134);
 }
 
 @media screen and (max-width: 768px) {
-  .fotend_middle {
+  .fotend_right {
     flex-direction: flex;
   }
   .fotend_left p,
-  .fotend_middle p {
+  .fotend_right p {
     font-size: 0.5rem;
     color: rgb(138, 134, 134);
   }

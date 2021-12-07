@@ -13,6 +13,12 @@ import './styles.css';
  * @returns {JSX} LandingPage
  */
 const LandingPage = () => {
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
   return (
     <React.Fragment>
       <Layout>

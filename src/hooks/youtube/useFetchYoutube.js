@@ -14,7 +14,6 @@ export const useFetchYoutube = () => {
 
   React.useEffect(() => {
     fetchYoutubeFromStrapi();
-    console.log(url);
   }, [url]);
 
   const fetchYoutubeFromStrapi = async () => {

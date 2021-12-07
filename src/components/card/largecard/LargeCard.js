@@ -21,7 +21,7 @@ const LargeCard = () => {
         posts &&
         posts.map((post) => {
           return (
-            <Box key={post.id} sx={{ maxWidth: 400, cursor: 'none' }}>
+            <Box key={post.id} sx={{ maxWidth: 500, cursor: 'none' }}>
               <CardActionArea>
                 <CardMedia
                   component="img"

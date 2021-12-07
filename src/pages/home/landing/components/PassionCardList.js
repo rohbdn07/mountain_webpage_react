@@ -9,7 +9,7 @@ import Header from '../../../../components/common/header/Header';
 export const PassionCardList = () => {
   return (
     <>
-      <Header title={'Our Passion'} />
+      <Header title={'Our Services'} />
       <Box
         sx={{
           display: 'flex',
