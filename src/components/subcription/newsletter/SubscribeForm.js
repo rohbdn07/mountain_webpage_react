@@ -48,10 +48,8 @@ export default function SubscribeForm() {
         setFormError('Please fill all the fields');
         return;
       }
-      console.log(email);
 
       const isEmailAlreadyExists = await checkIfEmailIsExistedOrNot(email);
-      console.log(isEmailAlreadyExists);
 
       if (isEmailAlreadyExists) {
         setSuccess(false);
@@ -67,8 +65,6 @@ export default function SubscribeForm() {
       // in order to subscribe Newsletter and in return, get the response(http) back.
       //Also, the User get an email notification.
       const response = await subcriptionService.post('/newsletters', { email });
-      console.log('this is from post', response);
-
       await checkFormSubmittedOrNot(response);
       resetUserInput();
     } catch (error) {
@@ -93,7 +89,6 @@ export default function SubscribeForm() {
   // if the email is already existed, return true.
   const checkIfEmailIsExistedOrNot = async (email) => {
     const response = await subcriptionService.get('/newsletters');
-    console.log('this is to check', response.data);
     if (response && response.data.length > 0) {
       return response.data.filter((element) => element.email === email).length > 0;
     }
