@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Home', 'About us', 'Services', 'Contact'];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveNavBar = () => {
@@ -26,8 +27,17 @@ const ResponsiveNavBar = () => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (menuItem) => {
     setAnchorElNav(null);
+    if (menuItem == 'Home') {
+      window.scrollTo(0, 0);
+    } else if (menuItem == 'About us') {
+      window.scrollTo(0, 600);
+    } else if (menuItem == 'Services') {
+      window.scrollTo(0, 1150);
+    } else {
+      window.scrollTo(0, 2000);
+    }
   };
 
   const handleCloseUserMenu = () => {
@@ -74,14 +84,16 @@ const ResponsiveNavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}>
-                {page}
-              </Button>
-            ))}
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={() => handleCloseNavMenu(page)}
+                  sx={{ my: 2, color: 'white', display: 'block' }}>
+                  {page}
+                </Button>
+              ))}
+            </Box>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

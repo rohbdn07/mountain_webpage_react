@@ -4,13 +4,15 @@ const Address = () => {
   return (
     <Box
       sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
-        // height: 10,
-        fontSize: 10,
-        opacity: [0.9, 0.8, 0.7]
+        fontSize: '10px'
       }}>
-      <p>Hel-Fin Street</p>
-      <p>0-4251</p>
+      Hel-Fin Street
+      <br />
+      0-4251
     </Box>
   );
 };

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useFetchSinglePost } from '../../hooks/post/useFetchServicePost';
 // import { getImagesUrlFromStripe } from '../../utils/getImages';
 import Author from './components/Author';
+import BackButton from './components/BackButton';
 import Content from './components/Content';
 import PostBanner from './components/PostBanner';
 import Title from './components/Title';
@@ -13,6 +14,12 @@ import { Layout } from './layout';
  * @returns {JSX} LandingPage
  */
 const PostPage = () => {
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
   const params = useParams();
   const url = 'http://localhost:1337';
 
@@ -33,6 +40,7 @@ const PostPage = () => {
       <Layout>
         <PostBanner image={`${url}${getPostImageUrl}`} />
         <Title title={postTitle} />
+        <BackButton />
         <Author author={postAuthor} created={postCreatedAt} />
         <Content content={postContent} />
       </Layout>

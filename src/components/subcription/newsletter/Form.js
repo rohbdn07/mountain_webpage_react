@@ -33,7 +33,7 @@ const Form = ({ onSubmit, formError, success, email, handleInputChange }) => {
             variant="h3"
             color={'white'}
             sx={{
-              fontSize: '2rem',
+              fontSize: '1.5rem',
               textAlign: 'center',
               paddingBottom: '1rem'
             }}>
@@ -59,7 +59,7 @@ const Form = ({ onSubmit, formError, success, email, handleInputChange }) => {
               <Typography
                 variant="body1"
                 gutterBottom
-                color="#ffffff"
+                color="black"
                 sx={{
                   flex: 1,
                   maxWidth: 700,
@@ -75,13 +75,14 @@ const Form = ({ onSubmit, formError, success, email, handleInputChange }) => {
                   maxWidth: 600,
                   margin: 'auto',
                   bgcolor: '#001d3d',
-                  opacity: 0.75
+                  opacity: 0.85,
+                  padding: '0rem'
                 }}>
                 <Input
                   type={'email'}
                   placeholder={'Enter you email...'}
                   autoFocus={false}
-                  sx={{ color: 'white' }}
+                  sx={{ color: 'white', border: 'none' }}
                   name={'email'}
                   value={email}
                   onChange={handleInputChange}
@@ -91,7 +92,7 @@ const Form = ({ onSubmit, formError, success, email, handleInputChange }) => {
             <CardContent>
               <Typography
                 variant="body2"
-                color="#ffffff"
+                color="black"
                 sx={{
                   flex: 1,
                   maxWidth: 400,
